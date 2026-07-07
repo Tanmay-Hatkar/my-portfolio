@@ -1,0 +1,45 @@
+import Section from "@/components/Section";
+import { projects } from "@/lib/data";
+
+export default function Projects() {
+  return (
+    <Section id="projects" title="Projects">
+      <div className="grid gap-6 sm:grid-cols-2">
+        {projects.map((project) => (
+          <div key={project.name} className="flex flex-col rounded-lg border border-border bg-card p-5">
+            <p className="font-semibold">{project.name}</p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {project.stack.map((tech) => (
+                <span key={tech} className="rounded-full bg-background px-2.5 py-0.5 text-xs text-muted">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted">
+              {project.bullets.map((bullet, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-accent">›</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+            {(project.link || project.repo) && (
+              <div className="mt-4 flex gap-4 text-sm font-medium">
+                {project.link && (
+                  <a href={project.link} className="text-accent hover:underline">
+                    Live demo
+                  </a>
+                )}
+                {project.repo && (
+                  <a href={project.repo} className="text-accent hover:underline">
+                    Source
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
