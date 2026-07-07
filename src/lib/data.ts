@@ -114,12 +114,14 @@ export const publications: Publication[] = [
     venue: "ICMVA 2025",
     description:
       "Published research advancing autonomous vehicle perception with 82.4% accuracy and systematic analysis of model scaling and cross-dataset transfer techniques for commercial AV deployment.",
+    link: "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13734/3078755/Urban-scene-segmentation-and-cross-dataset-transfer-learning-using-SegFormer/10.1117/12.3078755.short",
   },
   {
     title: "Explainable Transfer Learning of Cross-Dataset in Visual Scene Segmentation",
     venue: "Preprints 2025",
     description:
       "Extended research with explainability techniques (confidence heatmaps, Grad-CAM) to enhance interpretability in AI decision systems.",
+    link: "https://www.preprints.org/manuscript/202511.0283",
   },
 ];
 
