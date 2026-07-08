@@ -18,10 +18,10 @@ export default function Hero() {
         <Image
           src="/headshot.jpg"
           alt={personal.name}
-          width={160}
-          height={160}
+          width={240}
+          height={240}
           priority
-          className="h-28 w-28 shrink-0 rounded-full border-2 border-border object-cover sm:h-40 sm:w-40"
+          className="h-40 w-40 shrink-0 rounded-full border-2 border-border object-cover sm:h-56 sm:w-56"
         />
       </div>
 
