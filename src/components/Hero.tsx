@@ -1,15 +1,29 @@
+import Image from "next/image";
 import { personal } from "@/lib/data";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 
 export default function Hero() {
   return (
     <section id="top" className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
-      <p className="font-mono text-sm text-accent">Hi, I&apos;m</p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-6xl">{personal.name}</h1>
-      <h2 className="mt-3 text-xl font-medium text-muted sm:text-2xl">{personal.title}</h2>
-      <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-        {personal.tagline}
-      </p>
+      <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-mono text-sm text-accent">Hi, I&apos;m</p>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-6xl">{personal.name}</h1>
+          <h2 className="mt-3 text-xl font-medium text-muted sm:text-2xl">{personal.title}</h2>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+            {personal.tagline}
+          </p>
+        </div>
+
+        <Image
+          src="/headshot.jpg"
+          alt={personal.name}
+          width={160}
+          height={160}
+          priority
+          className="h-28 w-28 shrink-0 rounded-full border-2 border-border object-cover sm:h-40 sm:w-40"
+        />
+      </div>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">
         <a
