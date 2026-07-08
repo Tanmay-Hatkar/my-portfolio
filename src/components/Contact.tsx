@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 import { personal } from "@/lib/data";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
 
 export default function Contact() {
   return (
@@ -11,24 +12,27 @@ export default function Contact() {
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`mailto:${personal.email}`}
-          className="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+          className="flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
         >
+          <MailIcon className="h-4 w-4" />
           {personal.email}
         </a>
         <a
           href={personal.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-card"
+          className="flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-card"
         >
+          <LinkedInIcon className="h-4 w-4" />
           LinkedIn
         </a>
         <a
           href={personal.github}
           target="_blank"
           rel="noreferrer"
-          className="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-card"
+          className="flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-card"
         >
+          <GitHubIcon className="h-4 w-4" />
           GitHub
         </a>
       </div>
