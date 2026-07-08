@@ -1,4 +1,5 @@
 import Section from "@/components/Section";
+import Expandable from "@/components/Expandable";
 import { experience } from "@/lib/data";
 
 export default function Experience() {
@@ -25,6 +26,19 @@ export default function Experience() {
                 </li>
               ))}
             </ul>
+
+            <Expandable>
+              <div className="flex flex-wrap gap-2">
+                {job.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-border bg-card px-3 py-1 text-xs text-muted"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </Expandable>
           </div>
         ))}
       </div>

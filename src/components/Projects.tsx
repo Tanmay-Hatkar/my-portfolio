@@ -1,4 +1,6 @@
 import Section from "@/components/Section";
+import Expandable from "@/components/Expandable";
+import ScreenshotPlaceholder from "@/components/ScreenshotPlaceholder";
 import { projects } from "@/lib/data";
 
 export default function Projects() {
@@ -37,6 +39,34 @@ export default function Projects() {
                 )}
               </div>
             )}
+
+            <Expandable>
+              <div className="space-y-5 border-t border-border pt-4">
+                <p className="text-sm leading-relaxed text-muted">{project.writeup}</p>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {project.stackGroups.map((group) => (
+                    <div key={group.label}>
+                      <p className="text-xs font-semibold tracking-wide text-foreground uppercase">
+                        {group.label}
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {group.items.map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-full bg-background px-2.5 py-0.5 text-xs text-muted"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <ScreenshotPlaceholder label={project.name} />
+              </div>
+            </Expandable>
           </div>
         ))}
       </div>
