@@ -6,6 +6,7 @@ export const personal = {
   phone: "+1 (807) 356-4863",
   linkedin: "https://www.linkedin.com/in/tanmay-hatkar-82180a190/",
   github: "https://github.com/Tanmay-Hatkar",
+  githubUsername: "Tanmay-Hatkar",
   tagline:
     "Building LLM-powered applications, autonomous AI agents, and production ML systems — from dataset strategy and fine-tuning to cloud deployment.",
   summary:

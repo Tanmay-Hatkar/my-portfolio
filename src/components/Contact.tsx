@@ -36,6 +36,17 @@ export default function Contact() {
           GitHub
         </a>
       </div>
+
+      <div className="mt-8 rounded-lg border border-border bg-card p-5">
+        <p className="text-sm font-medium">GitHub activity</p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`https://ghchart.rshah.org/fb923c/${personal.githubUsername}`}
+          alt={`${personal.name}'s GitHub contribution graph`}
+          className="mt-3 w-full"
+          loading="lazy"
+        />
+      </div>
     </Section>
   );
 }
