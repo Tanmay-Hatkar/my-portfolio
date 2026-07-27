@@ -11,6 +11,12 @@ export default async function GitHubActivityGraph() {
       svg = (await res.text())
         .replaceAll("#EEEEEE", "#292524")
         .replaceAll("#767676", "#a3a3a3");
+
+      const dims = svg.match(/<svg[^>]*width="(\d+)"[^>]*height="(\d+)"[^>]*>/);
+      if (dims) {
+        const [openTag, width, height] = dims;
+        svg = svg.replace(openTag, openTag.replace(">", ` viewBox="0 0 ${width} ${height}">`));
+      }
     }
   } catch {
     svg = null;
